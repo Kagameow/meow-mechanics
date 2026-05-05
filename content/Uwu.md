@@ -1,0 +1,27 @@
+---
+title: "The Weapon's Refrain (UWU)"
+---
+
+## Predation
+
+![[Pasted image 20260219171603.png]]
+
+
+MOVE to CARDINAL (A, B, C, D)
+
+NEVER where GARUDA (she blockes TWO CARDINAL) or near TITAN
+ON PIC C safe
+
+DODGE OUT LANDSLIDE, STAY ON LANSLIDE EDGE
+
+AFTER GARUDA WHEEL AND IFRIT DASH
+
+GO TO 4,5 RUNES, DONT GO NOT NEAR ULTIMA (SPRINT if you were forced to be close to ultima ) 
+
+SCREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE AWAY TO CENTER
+
+BAIT BEHIND BOSS, SILLY RDM
+
+
+
+
