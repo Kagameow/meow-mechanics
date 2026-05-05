@@ -14,4 +14,4 @@ cd "$QUARTZ_DIR"
 echo "Pushing to GitHub..."
 pnpm exec quartz sync
 
-echo "Done! Site will deploy shortly at https://kagameow.github.io/meow-mechanics"
+echo "Done! Site will deploy shortly at https://kagameow.moe/meow-mechanics"
