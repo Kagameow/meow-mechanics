@@ -1,3 +1,273 @@
 @use "./base.scss";
 
-// put your custom CSS here!
+// Catppuccin for Quartz — Mocha (dark) + Latte (light)
+// Matches Obsidian's Catppuccin theme as closely as possible.
+
+// --- Palette Variables ---
+
+:root[saved-theme="dark"] {
+  --ctp-rosewater: #f5e0dc;
+  --ctp-flamingo: #f2cdcd;
+  --ctp-pink: #f5c2e7;
+  --ctp-mauve: #cba6f7;
+  --ctp-red: #f38ba8;
+  --ctp-maroon: #eba0ac;
+  --ctp-peach: #fab387;
+  --ctp-yellow: #f9e2af;
+  --ctp-green: #a6e3a1;
+  --ctp-teal: #94e2d5;
+  --ctp-sky: #89dceb;
+  --ctp-sapphire: #74c7ec;
+  --ctp-blue: #89b4fa;
+  --ctp-lavender: #b4befe;
+  --ctp-text: #cdd6f4;
+  --ctp-subtext1: #bac2de;
+  --ctp-subtext0: #a6adc8;
+  --ctp-overlay2: #9399b2;
+  --ctp-overlay1: #7f849c;
+  --ctp-overlay0: #6c7086;
+  --ctp-surface2: #585b70;
+  --ctp-surface1: #45475a;
+  --ctp-surface0: #313244;
+  --ctp-base: #1e1e2e;
+  --ctp-mantle: #181825;
+  --ctp-crust: #11111b;
+}
+
+:root[saved-theme="light"] {
+  --ctp-rosewater: #dc8a78;
+  --ctp-flamingo: #dd7878;
+  --ctp-pink: #ea76cb;
+  --ctp-mauve: #8839ef;
+  --ctp-red: #d20f39;
+  --ctp-maroon: #e64553;
+  --ctp-peach: #fe640b;
+  --ctp-yellow: #df8e1d;
+  --ctp-green: #40a02b;
+  --ctp-teal: #179299;
+  --ctp-sky: #04a5e5;
+  --ctp-sapphire: #209fb5;
+  --ctp-blue: #1e66f5;
+  --ctp-lavender: #7287fd;
+  --ctp-text: #4c4f69;
+  --ctp-subtext1: #5c5f77;
+  --ctp-subtext0: #6c6f85;
+  --ctp-overlay2: #7c7f93;
+  --ctp-overlay1: #8c8fa1;
+  --ctp-overlay0: #9ca0b0;
+  --ctp-surface2: #acb0be;
+  --ctp-surface1: #bcc0cc;
+  --ctp-surface0: #ccd0da;
+  --ctp-base: #eff1f5;
+  --ctp-mantle: #e6e9ef;
+  --ctp-crust: #dce0e8;
+}
+
+// --- Headings ---
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--ctp-lavender) !important;
+}
+
+article > h1 > a[role="anchor"],
+h2 > a[role="anchor"],
+h3 > a[role="anchor"],
+h4 > a[role="anchor"],
+h5 > a[role="anchor"],
+h6 > a[role="anchor"] {
+  color: var(--ctp-lavender) !important;
+}
+
+// --- Bold / Italic / Strikethrough ---
+
+strong, b {
+  color: var(--ctp-sapphire);
+}
+
+em, i {
+  color: var(--ctp-green);
+}
+
+del, s {
+  color: var(--ctp-maroon);
+}
+
+// --- Blockquotes ---
+
+blockquote {
+  border-left-color: var(--ctp-lavender);
+}
+
+// --- Links ---
+
+a.external {
+  color: var(--ctp-teal);
+
+  &:hover {
+    color: var(--ctp-teal);
+    opacity: 0.8;
+  }
+}
+
+a.internal.broken {
+  color: var(--ctp-maroon) !important;
+}
+
+a.internal.tag-link {
+  color: var(--ctp-lavender);
+}
+
+// --- Code ---
+
+code {
+  background: var(--ctp-mantle);
+  color: var(--ctp-subtext0);
+}
+
+pre {
+  background-color: var(--ctp-mantle) !important;
+  border-color: var(--ctp-surface0) !important;
+
+  & > code {
+    background: transparent;
+    color: var(--ctp-text);
+  }
+}
+
+// --- Callouts (Catppuccin palette per type) ---
+
+.callout {
+  &[data-callout] {
+    --color: var(--ctp-blue);
+    --border: color-mix(in srgb, var(--ctp-blue) 40%, transparent);
+    --bg: color-mix(in srgb, var(--ctp-blue) 10%, transparent);
+  }
+
+  &[data-callout="abstract"],
+  &[data-callout="summary"],
+  &[data-callout="tldr"] {
+    --color: var(--ctp-sapphire);
+    --border: color-mix(in srgb, var(--ctp-sapphire) 40%, transparent);
+    --bg: color-mix(in srgb, var(--ctp-sapphire) 10%, transparent);
+  }
+
+  &[data-callout="info"],
+  &[data-callout="todo"] {
+    --color: var(--ctp-blue);
+    --border: color-mix(in srgb, var(--ctp-blue) 40%, transparent);
+    --bg: color-mix(in srgb, var(--ctp-blue) 10%, transparent);
+  }
+
+  &[data-callout="tip"],
+  &[data-callout="hint"],
+  &[data-callout="important"] {
+    --color: var(--ctp-sapphire);
+    --border: color-mix(in srgb, var(--ctp-sapphire) 40%, transparent);
+    --bg: color-mix(in srgb, var(--ctp-sapphire) 10%, transparent);
+  }
+
+  &[data-callout="success"],
+  &[data-callout="check"],
+  &[data-callout="done"] {
+    --color: var(--ctp-green);
+    --border: color-mix(in srgb, var(--ctp-green) 40%, transparent);
+    --bg: color-mix(in srgb, var(--ctp-green) 10%, transparent);
+  }
+
+  &[data-callout="question"],
+  &[data-callout="help"],
+  &[data-callout="faq"] {
+    --color: var(--ctp-yellow);
+    --border: color-mix(in srgb, var(--ctp-yellow) 40%, transparent);
+    --bg: color-mix(in srgb, var(--ctp-yellow) 10%, transparent);
+  }
+
+  &[data-callout="warning"],
+  &[data-callout="caution"],
+  &[data-callout="attention"] {
+    --color: var(--ctp-peach);
+    --border: color-mix(in srgb, var(--ctp-peach) 40%, transparent);
+    --bg: color-mix(in srgb, var(--ctp-peach) 10%, transparent);
+  }
+
+  &[data-callout="failure"],
+  &[data-callout="fail"],
+  &[data-callout="missing"] {
+    --color: var(--ctp-red);
+    --border: color-mix(in srgb, var(--ctp-red) 40%, transparent);
+    --bg: color-mix(in srgb, var(--ctp-red) 10%, transparent);
+  }
+
+  &[data-callout="danger"],
+  &[data-callout="error"] {
+    --color: var(--ctp-red);
+    --border: color-mix(in srgb, var(--ctp-red) 40%, transparent);
+    --bg: color-mix(in srgb, var(--ctp-red) 10%, transparent);
+  }
+
+  &[data-callout="bug"] {
+    --color: var(--ctp-red);
+    --border: color-mix(in srgb, var(--ctp-red) 40%, transparent);
+    --bg: color-mix(in srgb, var(--ctp-red) 10%, transparent);
+  }
+
+  &[data-callout="example"] {
+    --color: var(--ctp-mauve);
+    --border: color-mix(in srgb, var(--ctp-mauve) 40%, transparent);
+    --bg: color-mix(in srgb, var(--ctp-mauve) 10%, transparent);
+  }
+
+  &[data-callout="quote"],
+  &[data-callout="cite"] {
+    --color: var(--ctp-overlay1);
+    --border: color-mix(in srgb, var(--ctp-overlay1) 40%, transparent);
+    --bg: color-mix(in srgb, var(--ctp-overlay1) 10%, transparent);
+  }
+}
+
+// --- Tables ---
+
+th {
+  color: var(--ctp-subtext0);
+  border-bottom-color: var(--ctp-surface0);
+}
+
+tr {
+  border-bottom-color: var(--ctp-surface0);
+}
+
+// --- Horizontal rules ---
+
+hr {
+  background-color: var(--ctp-blue);
+}
+
+// --- Highlights (==text==) ---
+
+.text-highlight {
+  background-color: color-mix(in srgb, var(--ctp-rosewater) 50%, transparent);
+  color: var(--ctp-text);
+}
+
+// --- Selection ---
+
+::selection {
+  background: color-mix(in srgb, var(--ctp-overlay2) 30%, transparent);
+  color: var(--ctp-text);
+}
+
+// --- Scrollbar ---
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--ctp-surface1);
+
+  &:hover {
+    background-color: var(--ctp-surface2);
+  }
+}
+
+// --- Page title ---
+
+.page-title {
+  color: var(--ctp-lavender) !important;
+}
